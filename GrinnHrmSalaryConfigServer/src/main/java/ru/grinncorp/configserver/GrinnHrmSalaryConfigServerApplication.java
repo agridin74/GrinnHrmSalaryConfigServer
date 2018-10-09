@@ -8,5 +8,6 @@ public class GrinnHrmSalaryConfigServerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GrinnHrmSalaryConfigServerApplication.class, args);
+		System.out.println("jkhjkhk");
 	}
 }
