@@ -1,5 +1,10 @@
+# Maven
 /target/
 !.mvn/wrapper/maven-wrapper.jar
+# Eclipse
+.settings/
+.classpath
+.project
 
 ### STS ###
 .apt_generated
@@ -23,3 +28,5 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+# Branch switching
+generated/
