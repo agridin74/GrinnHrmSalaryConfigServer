@@ -6,6 +6,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 
+/**
+ * @author agridin74
+ * Тестирование подлючения junit5
+ */
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class GrinnHrmSalaryDiscoveryServerApplicationTests {
