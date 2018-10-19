@@ -1,0 +1,4 @@
+loggin:
+  level:
+    org:
+      springframework: INFO
