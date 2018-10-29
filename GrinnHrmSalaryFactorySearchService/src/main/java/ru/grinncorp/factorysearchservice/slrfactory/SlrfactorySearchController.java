@@ -39,7 +39,7 @@ public class SlrfactorySearchController {
 	 * Список всех предприятий
 	 * @return Collection < Slrfactory >
 	 */
-	@RequestMapping("/findAll")
+	@RequestMapping("/findall")
 	public Collection < Slrfactory > findAll(){
 		logger.info("... <Controller>  find all factories ...");
 		return slrfactorySearchService.findAll();

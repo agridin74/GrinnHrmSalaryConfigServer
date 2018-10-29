@@ -1,5 +1,4 @@
-
-package ru.grinncorp.factorysearchservice.slrfactory;
+package ru.grinncorp.factorydashboardservice.slrfactory;
 
 
 
@@ -8,7 +7,7 @@ package ru.grinncorp.factorysearchservice.slrfactory;
  * @author agridin74
  */
 
-public class Slrfactory  {
+public class SlrfactoryInfo  {
  
     private Long id;
     
