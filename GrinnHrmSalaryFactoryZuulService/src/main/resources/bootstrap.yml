@@ -1,0 +1,21 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9091/eureka
+management:
+  security:
+    enable: false
+security:
+  basic:
+    enable: false
+server:
+  port: 8084
+spring:
+  application:
+    name: SlrfactoryAPIGateway
+zuul:
+  host:
+    socket-timeout-millis: 30000
+  routes:
+    slrfactoryUI:
+      serviceId: FactoryDashBoard
