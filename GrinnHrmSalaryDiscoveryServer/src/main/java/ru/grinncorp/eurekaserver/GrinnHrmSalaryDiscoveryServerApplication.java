@@ -17,6 +17,8 @@ public class GrinnHrmSalaryDiscoveryServerApplication {
 	private static Logger logger = LoggerFactory.getLogger(GrinnHrmSalaryDiscoveryServerApplication.class);
 
 	public static void main(String[] args) {
+		//Установка для поиска файла конфигурации отличного от стандартного
+		//System.setProperty("spring.config.name", "example-registration-server");
 		SpringApplication.run(GrinnHrmSalaryDiscoveryServerApplication.class, args);
 		logger.info("Start Eureka Server ... ");
 	}
