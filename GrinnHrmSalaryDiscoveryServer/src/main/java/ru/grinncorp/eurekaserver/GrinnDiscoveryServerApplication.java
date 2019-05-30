@@ -12,14 +12,14 @@ import org.slf4j.LoggerFactory;
  */
 @EnableEurekaServer
 @SpringBootApplication
-public class GrinnHrmSalaryDiscoveryServerApplication {
+public class GrinnDiscoveryServerApplication {
 	
-	private static Logger logger = LoggerFactory.getLogger(GrinnHrmSalaryDiscoveryServerApplication.class);
+	private static Logger logger = LoggerFactory.getLogger(GrinnDiscoveryServerApplication.class);
 
 	public static void main(String[] args) {
 		//Установка для поиска файла конфигурации отличного от стандартного
 		//System.setProperty("spring.config.name", "example-registration-server");
-		SpringApplication.run(GrinnHrmSalaryDiscoveryServerApplication.class, args);
+		SpringApplication.run(GrinnDiscoveryServerApplication.class, args);
 		logger.info("Start Eureka Server ... ");
 	}
 }

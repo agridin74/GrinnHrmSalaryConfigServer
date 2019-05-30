@@ -12,7 +12,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
  */
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-public class GrinnHrmSalaryDiscoveryServerApplicationTests {
+public class GrinnDiscoveryServerApplicationTests {
 
 	@Test
 	public void contextLoads() {

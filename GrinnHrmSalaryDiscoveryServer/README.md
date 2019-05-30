@@ -5,17 +5,27 @@
  * Clustered  :  есть несколько серверов Eureka ,может иметь файл свойств 
                  и взаимодействовать с сервером конфигурации, 
                  как это делают другие микрослужбы.
+ в производственной среде необходимо иметь минимум 2 экземпляра
 ## Файл параметров bootstrap.properties
    * spring.application.name : уникальное имя сервиса
    * eureka.client.serviceUrl.defaultZone :  зона URL сервера Eureka для синхронизации реестра службы
-   * server.port : используемый порт сервера
+   * server.port : используемый порт сервера  (по умоланию ${PORT:8761})
    * eureka.client.register-with-eureka : нужно ли регистироваться на сервере Eureka (true or false)
-   * eureka.client.fetch-registry : не регистрировать себя в реестре служб
+   * eureka.client.fetch-registry : не регистрировать себя в реестре служб (true or false)
+   * eureka.server.enable-self-preservation=false : в случае если большинство
+        зарегистрированных сервисов не подает признаков жизни, то сервер считает, что
+        такое   поведение связано с сетью, и не отменит регистрацию сервисов, 
+        не отвечающих на запросы (режим самосохранения). можно включить true при небольшом
+	количестве сервисов( пробный запуск на локальной машине)
+	самосохранения). Это свойство полезно в среде разработки
+	Если  отключить режим самосохранения для разработки, в производственной среде необходимо включить.
 ### Настройка клиентов
+   * 
+	
    * eureka.instance.metadataMap.instanceId: -- регистрация нового экземпляра 
        одного и того же сервиса
        ${spring.application.name}:${spring.application.instance_id:${server.port}} --новый порт
        ${spring.application.name}:${spring.application.instance_id:${random.value}} --случайное значение
 
- http://localhost:9091
+ http://localhost:8761
 
