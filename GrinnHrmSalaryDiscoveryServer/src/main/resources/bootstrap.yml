@@ -1,15 +1,28 @@
-eureka:
-  client:
-    fetch-registry: false
-    register-with-eureka: false
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-  server:
-    wait-time-in-ms-when-sync-empty: 0   
-server:
-  port: 8761
+#Локальные параметры
+#eureka:
+#  client:
+#    fetch-registry: false
+#    register-with-eureka: false
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#  server:
+#    wait-time-in-ms-when-sync-empty: 0   
+#server:
+#  port: 8761
+#spring:
+#  application:
+#    name: discovery-server
+# Параметры берутся с сервера конфигурации
 spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
   application:
-    name: grinn-discovery-server
-
+    name: discovery-server
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      uri: http://config-server:8888
   

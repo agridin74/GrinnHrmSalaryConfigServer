@@ -31,6 +31,8 @@ import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.core.style.ToStringCreator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * Simple JavaBean domain object representing an slrfactory
  * @author agridin74
@@ -198,9 +200,11 @@ public class Slrfactory  {
     @Size(max = 10)
     @Column(name = "SFSSADDNUMBER")
     private String sfssaddnumber;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idfactory",fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idfactory",fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<Slrdepartment> slrdepartments;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idfactory",fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idfactory",fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<Slrbranches> slrbranchess;
    
  

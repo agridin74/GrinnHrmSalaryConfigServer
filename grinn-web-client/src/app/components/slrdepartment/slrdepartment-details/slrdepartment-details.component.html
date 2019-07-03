@@ -1,0 +1,17 @@
+<h2>Slrdepartment Details works!</h2>
+<hr/>
+<div *ngIf="slrdepartment">
+    <div>
+        <label><b>ID:</b></label>{{slrdepartment.id}}
+    </div>
+    <div>
+        <label><b>SNM</b></label>{{slrdepartment.snm}}
+    </div>
+    <div>
+        <label><b>Smnemocode</b></label>{{slrdepartment.smnemocode}}
+    </div>
+</div>
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Slrdepartment List</button>
+<br> 

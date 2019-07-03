@@ -1,0 +1,6 @@
+zuul:
+  prefix: /api
+  ignoredServices: '*'
+  routes:
+    departments-service: /department/**
+    api-gateway: /gateway/**

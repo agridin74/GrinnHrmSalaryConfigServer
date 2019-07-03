@@ -28,6 +28,8 @@ import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.core.style.ToStringCreator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  *
@@ -54,7 +56,8 @@ public class Slrbranches  {
     @Column(name = "SNM")
     private String snm;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idbranches",fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idbranches",fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<Slrdepartment> slrdepartments;
     
     @JoinColumn(name = "IDFACTORY", referencedColumnName = "ID")
