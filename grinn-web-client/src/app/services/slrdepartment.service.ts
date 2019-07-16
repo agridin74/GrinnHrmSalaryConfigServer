@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class SlrdepartmentService {
 
-  private baseUrl ='http://localhost:8080/api/department/slrdepartments';
+  private baseUrl ='http://172.16.0.237:8080/api/department/slrdepartments';
+ //private baseUrl ='/api/department/slrdepartments';
 
   constructor(private http: HttpClient) { }
 

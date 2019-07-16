@@ -1,5 +1,10 @@
 package ru.grinncorp.api.application;
 
+import java.util.List;
+
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,6 +20,16 @@ public class DepartmentsServiceClient {
 	public Slrdepartment getSlrdepartment(final Long depId) {
 		return loadBalancedRestTemplate.getForObject("http://departments-service/slrdepartments/{depId}", 
 				Slrdepartment.class,depId);
+	}
+	
+	public List<Slrdepartment> findAll() {
+		ResponseEntity<List<Slrdepartment>> response = loadBalancedRestTemplate.exchange(
+				"http://departments-service/slrdepartments/", 
+				HttpMethod.GET,
+				null,
+				new ParameterizedTypeReference<List<Slrdepartment>>() {	});
+		List<Slrdepartment> deps = response.getBody();
+		return deps;
 	}
 
 }
