@@ -1,15 +1,11 @@
-package ru.grinncorp.departments.repository;
+package ru.grinncorp.slrkadr.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import ru.grinncorp.departments.entity.Slrdepartment;
-/**
- * 
- * @author agridin74
- * 
- */
-public interface SlrdepartmentRepository extends JpaRepository<Slrdepartment, Long> {
-	
+
+import ru.grinncorp.slrkadr.entity.Slrkadr;
+
+public interface SlrkadrRepository extends JpaRepository<Slrkadr, Long>{
 	/**     Пользовательский запрос
 	 *      @Query("select u from User u where u.name = :name")
      *      User findByNameCustomQuery(@Param("name") String name);
