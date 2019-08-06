@@ -1,0 +1,13 @@
+package ru.grinncorp.paymentprize;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class GrinnPaymentPrizeServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(GrinnPaymentPrizeServiceApplication.class, args);
+	}
+
+}

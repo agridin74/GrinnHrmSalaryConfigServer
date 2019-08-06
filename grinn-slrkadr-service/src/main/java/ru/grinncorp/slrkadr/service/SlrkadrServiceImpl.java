@@ -44,8 +44,11 @@ public class SlrkadrServiceImpl implements SlrkadrService {
 
 	@Override
 	public Slrkadr create(Slrkadr entity) {
-		Slrkadr newSlrkadr;
-		newSlrkadr = repository.save(entity);
+		Optional<Slrkadr> existing = repository.findById(entity.getId());
+		existing.ifPresent(a -> {
+			throw new IllegalArgumentException("Slrkadr alredy exists: " + a.getId());
+		});
+		Slrkadr newSlrkadr = repository.save(entity);
 		log.info("+++ Create new slrkadr {}",newSlrkadr);
 		return newSlrkadr;
 	}
