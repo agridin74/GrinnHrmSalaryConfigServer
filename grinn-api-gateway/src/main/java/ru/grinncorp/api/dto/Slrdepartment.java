@@ -1,17 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ru.grinncorp.api.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
-
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
-import static java.util.stream.Collectors.toList;
 
 /**
  * Simple JavaBean domain object representing an slrdepartment.
