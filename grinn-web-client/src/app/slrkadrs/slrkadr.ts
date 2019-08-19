@@ -1,0 +1,30 @@
+export interface Slrkadr {
+    lsex: string;
+    lworker: string;
+    id: number;
+    sfirstname: string;
+    ssecondname: string;
+    sthirdname: string;
+    snm: string;
+    dbirthdate: Date;
+    sbirthregion: string;
+    sbirtharea: string;
+    sbirthtown: string;
+    sfirstnamerp: string;
+    ssecondnamerp: string;
+    sthirdnamerp: string;
+    sfirstnamedp: string;
+    ssecondnamedp: string;
+    sthirdnamedp: string;
+    semail: string;
+    sinn: string;
+    spfnumber: string;
+    spfcategory: string;
+    sgni: string;
+    idnationality: number;
+    idlanguage: number;
+    idcountry: number;
+    idcitizenship: number;
+    idalientcategory: number;
+    codct: number;
+}

@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { CreateSlrdepartmentComponent } from "./components/slrdepartment/create-slrdepartment/create-slrdepartment.component";
-import { SlrdepartmentDetailsComponent } from "./components/slrdepartment/slrdepartment-details/slrdepartment-details.component";
-import { SlrdepartmentListComponent } from "./components/slrdepartment/slrdepartment-list/slrdepartment-list.component";
-const routes: Routes = [
-  { path: '', redirectTo: 'slrdepartment', pathMatch: 'full'},
-  { path: 'slrdepartments', component: SlrdepartmentListComponent },
-  { path: 'add', component: CreateSlrdepartmentComponent},
-  { path: 'details/:id', component: SlrdepartmentDetailsComponent},
+import { RouterModule , Routes, } from '@angular/router';
+import { PageNotFoundComponent} from './parts/page-not-found/page-not-found.component';
+import { WelcomeComponent} from './parts/welcome/welcome.component';
+const appRoutes: Routes = [
+  { path: 'welcome', component: WelcomeComponent},
+  { path: '', component: WelcomeComponent},
+  { path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

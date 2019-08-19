@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="container">
+        <h2>Физические лица</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>full Name</th>
+                        <th>snm</th>
+                        <th>dbirthdate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let slrkadr of slrkadrs">
+                        <td> <a routerLink="/slrkadrs/{{slrkadr.id}}" routerLinkActive="active"
+                                    (click)="onSelect(slrkadr)" >
+                                {{ slrkadr.sfirstname}} {{slrkadr.ssecondname}}
+                            </a>
+                        </td>
+                        <td>
+                            {{ slrkadr.snm }}
+                        </td>
+                        <td>
+                            {{ slrkadr.dbirthdate }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <button class="btn btn-primary"> Add Slrkadr</button>
+            </div>
+        </div>        
+    </div>
+</div>

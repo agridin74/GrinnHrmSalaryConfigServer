@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="container xd-container">
+        <h2>Детальная информация по физ. лицу</h2>
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <th>ФИО</th>
+            <td><b>{{slrkadr.sfirstname}} {{slrkadr.ssecondname}}</b></td>
+            <th>Дата рождения</th>
+            <td>{{ slrkadr.dbirthdate}}</td>
+        </tr>
+    </table>
+    <button class="btn btn-default" (click)="gotoSlrkadrsList()">Назад</button>
+    <button class="btn btn-light" (click)="editSlrkadr()">Редактировать</button>
+</div>

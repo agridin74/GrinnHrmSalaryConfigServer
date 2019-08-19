@@ -1,0 +1,67 @@
+
+<div class="container-fluid">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/images/logo.png" width="100" height="30" alt="">
+            </a>
+          <span></span></a>
+      </div>
+
+      <ul class="nav navbar-nav">
+        <li>
+          <a routerLink="welcome" title="Домашняя страница">
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            <span>Домой</span>
+          </a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false">Подразделения<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/slrdepartments" ><span class="glyphicon glyphicon-search"
+              aria-hidden="true"></span><span>Список</span></a></li>
+            <li><a routerLink="/slrdepartments/add"><span class="glyphicon glyphicon-plus"
+              aria-hidden="true"></span><span>Добавить новый</span></a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false">Физические лица<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/slrkadrs"><span class="glyphicon glyphicon-search" aria-hidden="true">
+              Список
+            </span></a>
+            </li>
+            <li routerLink="/slrkadrs/add"><span class="glyphicon glyphicon-plus" aria-hidden="true">
+              <span>Добавить новый</span>
+             </span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a routerLink="/prizes" routerLinkActive="active" title="Призы">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+            <span>Подарки</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+</div>
+<router-outlet></router-outlet>
+<br/>
+<br/>
+<div class="container">
+  <div class="row">
+      <div class="col-12 text-center"><img src="./assets/images/angular.png"
+        alt="Angular" height="80" width="80"/>
+        <img src="./assets/images/spring-pivotal-logo.png"alt="Sponsored by Pivotal"/>
+      </div>
+  </div>
+</div>
