@@ -1,1 +1,21 @@
-<p>usrslrpaymentprize-detail works!</p>
+<div class="container-fluid">
+    <div class="container xd-container">
+        <h2>Информация по призам</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <td><b>{{entity.id}}</b></td>
+            </tr>
+            <tr>
+                <th>SNM</th>
+                <td>{{entity.snm}}</td>
+            </tr>
+            <tr>
+                <th>DPERIOD</th>
+                <td>{{entity.dperiod}}</td>
+            </tr>
+        </table>
+        <button class="btn btn-primary" (click)="gotoUsrslrpaymentprizeList()">Назад</button>
+        <button class="btn btn-primary" (click)="editUsrslrpaymentprize()">Редактировать</button>
+    </div>
+</div>

@@ -4,13 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { PartsModule} from './parts/parts.module';
-/**
- * todo переделать в модуль справочник подразделений
- * в дальнейшем импортировать модули
- * 
- */
-
+import { PartsModule } from './parts/parts.module';
+import { SlrdepartmentsModule } from './slrdepartments/slrdepartments.module';
+import { SlrkadrsModule } from './slrkadrs/slrkadrs.module';
+import { UsrslrpaymentprizeModule } from './usrslrpaymentprize/usrslrpaymentprize.module';
 import {HttpErrorHandler} from './error.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -24,7 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     PartsModule,
-    //добавить пользовательские модули
+    SlrdepartmentsModule,
+    SlrkadrsModule,
+    UsrslrpaymentprizeModule,
     BrowserAnimationsModule,
     AppRoutingModule
     ],

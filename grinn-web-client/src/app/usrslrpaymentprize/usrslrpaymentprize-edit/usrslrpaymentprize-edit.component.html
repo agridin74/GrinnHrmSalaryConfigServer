@@ -1,1 +1,42 @@
-<p>usrslrpaymentprize-edit works!</p>
+<div class="container-fluid">
+    <div class="container xd-container">
+        <h2>
+            Редактирование подарков
+        </h2>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+        </div>
+        <form (ngSubmit)="onSubmit(entityForm)" #entityForm="ngForm" class="form-horizontal">
+            <div class="form-group" hidden="true">
+                <input type="text" hidden="true" class="form-control" id="id" [(ngModel)]="entity.id" />
+            </div>
+            <div class="form-group has-feedback" [class.has-success]="snm.valid" [class.has-error]="!snm.valid">
+                <label for="snm" class="col-sm-2 control-label">SNM</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="snm" [(ngModel)]="entity.snm" minlength="2"
+                        required name="snm" #snm="ngModel"/>
+                    <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="snm.valid" 
+                        [class.glyphicon-remove]="!snm.valid" aria-hidden="true"></span>
+                    <span class="help-block" *ngIf="snm.dirty && snm.hasError('required')">Наименование должно быть заполнено</span>
+                    <span class="help-block" *ngIf="snm.dirty && snm.hasError('minlength')">Наименование должно быть длинной не меньше 2 х символов</span>
+                </div>
+            </div>
+            <div class="form-group has-feedback" [class.has-success]="dperiod.valid" [class.has-error]="!dperiod.valid">
+                <label for="dperiod" class="col-sm-2 control-label">dperiod</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="dperiod" [(ngModel)]="entity.dperiod" name="dperiod" required #dperiod="ngModel" />
+                    <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="dperiod.valid" 
+                        [class.glyphicon-remove]="!dperiod.valid" aria-hidden="true"></span>
+                    <span class="help-block" *ngIf="dperiod.dirty && dperiod.hasError('required')">Период должен быть заполнен</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-default" (click)="gotoUsrslrpaymentprizeDetail(entity)">Назад</button>
+                    <button type="submit" [disabled]="!entityForm.valid" class="btn btn-default">Сохранить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

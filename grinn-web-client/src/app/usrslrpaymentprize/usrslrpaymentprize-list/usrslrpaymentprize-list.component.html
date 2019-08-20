@@ -1,1 +1,38 @@
-<p>usrslrpaymentprize-list works!</p>
+<div class="container-fluid">
+    <div class="container xd-container">
+        <h2>Список подарков</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>snm</th>
+                        <th>dperiod</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let prize of usrslrpaymentprizes">
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                                    (click)="onSelect(prize)">
+                                {{prize.id}}
+                            </a>
+                        </td>
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                                    (click)="onSelect(prize)">
+                                {{prize.snm}}
+                            </a>
+                        </td>
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                                    (click)="onSelect(prize)">
+                                {{prize.dperiod}}
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <button class="btn btn-primary" (click)="addUsrslrpaymentprize()">Добавить</button>
+            </div>
+        </div>
+    </div>
+</div>

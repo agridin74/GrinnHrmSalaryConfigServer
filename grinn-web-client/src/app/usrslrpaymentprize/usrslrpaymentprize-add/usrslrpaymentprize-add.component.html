@@ -1,1 +1,36 @@
-<p>usrslrpaymentprize-add works!</p>
+<div class="container-fluid">
+    <div class="container xd-container">
+        <h2>
+            Новый приз
+        </h2>
+        <form (ngSubmit)="onSubmit(entityForm.value)" #entityForm="ngForm" class="form-horizontal">
+            <div class="form-group" hidden="true">
+                <input type="text" hidden="true" class="form-control" id="id" [(ngModel)]="entity.id" name="id"/>
+            </div>
+            <div class="form-group has-feedback" [class.has-success]="snm.dirty && snm.valid" 
+                [class.has-error]="snm.dirty && !snm.valid">
+                <label for="snm" class="col-sm-2 control-label">SNM</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="snm" [(ngModel)]="entity.snm" minlength="2" required name="snm" #snm="ngModel"/>
+                    <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="snm.valid" [class.glyphicon-remove]="!snm.valid" aria-hidden="true"></span>
+                    <span class="help-block" *ngIf="snm.dirty && snm.hasError('required')"> Поле должно быть заполнено</span>
+                    <span class="help-block" *ngIf="snm.dirty && snm.hasError('minlength')">Минимум 2 символа</span>
+                </div>
+            </div>
+            <div class="form-group has-feedback" [class.has-success]="dperiod.dirty && dperiod.valid" [class.has-error]="dperiod.dirty && !dperiod.valid">
+                <label for="dperiod" class="col-sm-2 control-label">dperiod</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="dperiod" [(ngModel)]="entity.dperiod" name="dperiod" requred #dperiod="ngModel"/>
+                    <span class="glyphicon for-control-feedback" [class.glyphicon-ok]="dperiod.valid" [class.glyphicon-remove]="!dperiod.valid" aria-hidden="true"></span>
+                    <span class="help-block" *ngIf="dperiod.dirty && dperiod.hasError('required')">Период обязателен для заполнения</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-primary" type="button" (click)="gotoUsrslrpaymentprizeList()">Назад</button>
+                    <button class="btn btn-default" type="submit" [disabled]="!entityForm.valid">Добавить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
