@@ -6,6 +6,8 @@ import { UsrslrpaymentprizeService } from '../usrslrpaymentprize.service';
 import { Usrslrpaymentprize } from '../usrslrpaymentprize';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import * as moment from 'moment';
+
 @Component({
   selector: 'app-usrslrpaymentprize-edit',
   templateUrl: './usrslrpaymentprize-edit.component.html',
@@ -30,6 +32,7 @@ export class UsrslrpaymentprizeEditComponent implements OnInit {
 
   onSubmit(entity: Usrslrpaymentprize) {
     const that = this;
+    entity.dperiod = moment(entity.dperiod).format('DD.MM.YYYY');
     this.prizeService.updateUsrslrpaymentprize(entity.id.toString(), entity).subscribe(
       res => this.gotoUsrslrpaymentprizeDetail(entity),
       error => this.errorMessage = error as any

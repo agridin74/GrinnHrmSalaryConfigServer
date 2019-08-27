@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-slrdepartment',
-  templateUrl: './create-slrdepartment.component.html',
-  styleUrls: ['./create-slrdepartment.component.css']
+  templateUrl: './slrdepartment-add.component.html',
+  styleUrls: ['./slrdepartment-add.component.css']
 })
 export class CreateSlrdepartmentComponent implements OnInit {
   slrdepartment: Slrdepartment;

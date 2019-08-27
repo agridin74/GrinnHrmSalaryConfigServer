@@ -34,7 +34,7 @@ export class SlrkadrEditComponent implements OnInit {
     );
   }
 
-  gotoSlrkadrDetail(slrkadr: Slrkadr){
+  gotoSlrkadrDetail(slrkadr: Slrkadr) {
     this.errorMessage = null;
     this.router.navigate(['/slrkadrs', slrkadr.id]);
   }

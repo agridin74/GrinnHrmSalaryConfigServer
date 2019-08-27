@@ -27,7 +27,7 @@ export class SlrdepartmentListComponent implements OnInit {
   }
 
   onSelect(slrdepartment: Slrdepartment){
-    this.router.navigate(['/slrdeaprtments', slrdepartment.id]);
+    this.router.navigate(['/slrdepartments', slrdepartment.id]);
   }
 
   addSlrdepartment(){

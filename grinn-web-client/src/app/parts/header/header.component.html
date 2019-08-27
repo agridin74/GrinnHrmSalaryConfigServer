@@ -1,8 +1,4 @@
 
-
-<!--
-  Menu
--->
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
@@ -21,41 +17,40 @@
               <a class="nav-link" href="#">Link</a>
             </li>--> 
             <li class="nav-item dropdown">
-              <a *ngIf="login.isUserLoggedIn()" class="nav-link dropdown-toggle" href="#" id="navbarDropdownDep" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownDep" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Подразделения
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownDep">
-                <a *ngIf="login.isUserLoggedIn()" class="dropdown-item" routerLink="/slrdepartments">Список</a>
+                <a class="dropdown-item" routerLink="/slrdepartments">Список</a>
                 <div class="dropdown-divider"></div>
-                <a *ngIf="login.isUserLoggedIn()" class="dropdown-item" routerLink="/slrdepartments/add">Добавить новый</a>
+                <a class="dropdown-item" routerLink="/slrdepartments/add">Добавить новый</a>
               </div>
             </li>
             <li class="nav-item dropdown">
-                <a *ngIf="login.isUserLoggedIn()" class="nav-link dropdown-toggle" href="#" id="navbarDropdownKadr" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownKadr" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Физические лица
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownKadr">
-                  <a *ngIf="login.isUserLoggedIn()" class="dropdown-item" routerLink="/slrkadrs">Список</a>
+                  <a class="dropdown-item" routerLink="/slrkadrs">Список</a>
                   <div class="dropdown-divider"></div>
-                  <a *ngIf="login.isUserLoggedIn()" class="dropdown-item" routerLink="/slrkadrs/add">Добавить новый</a>
+                  <a class="dropdown-item" routerLink="/slrkadrs/add">Добавить новый</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
-                  <a *ngIf="login.isUserLoggedIn()" class="nav-link dropdown-toggle" href="#" id="navbarDropdownPrize" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPrize" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Подарки
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownPrize">
-                    <a *ngIf="login.isUserLoggedIn()" class="dropdown-item" routerLink="/usrslrpaymentprizes">Список</a>
+                    <a class="dropdown-item" routerLink="/usrslrpaymentprizes">Список</a>
                     <div class="dropdown-divider"></div>
-                    <a *ngIf="login.isUserLoggedIn()" class="dropdown-item" routerLink="/usrslrpaymentprizes/add">Добавить новый</a>
+                    <a class="dropdown-item" routerLink="/usrslrpaymentprizes/add">Добавить новый</a>
                   </div>
               </li>
            <!-- <li class="nav-item">
               <a class="nav-link disabled" href="#">Disabled</a>
             </li>-->
            
-            <li><a *ngIf="!login.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
-    <li><a *ngIf="login.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+            
           </ul>
           <!--<form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -64,16 +59,3 @@
         </div>
       </nav>
 </div>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
-<!--<br/>
-<br/>
-<footer class="footer">
-    <div class="container text-center">
-    <address>
-    <strong>Copyright © 2019.АО «Корпорация «ГРИНН».</strong><br>
-    <a href="mailto:#">support@grinn-corp.ru</a>
-    </address>
-    </div>
-</footer>
--->

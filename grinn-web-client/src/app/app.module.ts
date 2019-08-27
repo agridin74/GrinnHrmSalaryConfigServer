@@ -8,8 +8,11 @@ import { PartsModule } from './parts/parts.module';
 import { SlrdepartmentsModule } from './slrdepartments/slrdepartments.module';
 import { SlrkadrsModule } from './slrkadrs/slrkadrs.module';
 import { UsrslrpaymentprizeModule } from './usrslrpaymentprize/usrslrpaymentprize.module';
-import {HttpErrorHandler} from './error.service';
+import { AuthModule } from './auth/auth.module';
+import { HttpErrorHandler } from './error.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SlrdepartmentsModule,
     SlrkadrsModule,
     UsrslrpaymentprizeModule,
+    AuthModule,
     BrowserAnimationsModule,
     AppRoutingModule
     ],

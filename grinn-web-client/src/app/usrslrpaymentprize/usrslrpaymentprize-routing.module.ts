@@ -7,12 +7,13 @@ import { UsrslrpaymentprizeDetailComponent } from './usrslrpaymentprize-detail/u
 import { UsrslrpaymentprizeListComponent } from './usrslrpaymentprize-list/usrslrpaymentprize-list.component';
 import { UsrslrpaymentprizeEditComponent } from './usrslrpaymentprize-edit/usrslrpaymentprize-edit.component';
 import { UsrslrpaymentprizeAddComponent } from './usrslrpaymentprize-add/usrslrpaymentprize-add.component';
+import { AuthGaurdService } from '../auth/auth-gaurd.service';
 
 const routesPrizes: Routes = [
-  {path: 'usrslrpaymentprizes', component: UsrslrpaymentprizeListComponent},
-  {path: 'usrslrpaymentprizes/add', component: UsrslrpaymentprizeAddComponent},
-  {path: 'usrslrpaymentprizes/:id', component: UsrslrpaymentprizeDetailComponent},
-  {path: 'usrslrpaymentprizes/:id/edit', component: UsrslrpaymentprizeEditComponent}
+  {path: 'usrslrpaymentprizes', component: UsrslrpaymentprizeListComponent, canActivate: [AuthGaurdService]},
+  {path: 'usrslrpaymentprizes/add', component: UsrslrpaymentprizeAddComponent, canActivate: [AuthGaurdService]},
+  {path: 'usrslrpaymentprizes/:id', component: UsrslrpaymentprizeDetailComponent, canActivate: [AuthGaurdService]},
+  {path: 'usrslrpaymentprizes/:id/edit', component: UsrslrpaymentprizeEditComponent, canActivate: [AuthGaurdService]}
 ];
 
 @NgModule({

@@ -6,6 +6,7 @@ import { UsrslrpaymentprizeService } from '../usrslrpaymentprize.service';
 import { Usrslrpaymentprize } from '../usrslrpaymentprize';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-usrslrpaymentprize-list',
   templateUrl: './usrslrpaymentprize-list.component.html',
@@ -31,7 +32,7 @@ export class UsrslrpaymentprizeListComponent implements OnInit {
   }
 
   addUsrslrpaymentprize(){
-    this.router.navigate(['/usrslrpaymentprize/add']);
+    this.router.navigate(['/usrslrpaymentprizes/add']);
   }
 
 }

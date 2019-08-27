@@ -11,6 +11,7 @@
  import { CreateSlrdepartmentComponent } from './slrdepartment-add/slrdepartment-add.component';
  import { SlrdepartmentEditComponent } from './slrdepartment-edit/slrdepartment-edit.component';
  import { SlrdepartmentsRoutingModule } from './slrdepartments-routing.module';
+ import { SlrdepartmentItemComponent } from './slrdepartment-item/slrdepartment-item.component';
 
  @NgModule({
      imports: [
@@ -22,7 +23,15 @@
          SlrdepartmentListComponent,
          SlrdepartmentDetailsComponent,
          SlrdepartmentEditComponent,
-         CreateSlrdepartmentComponent
+         CreateSlrdepartmentComponent,
+         SlrdepartmentItemComponent
+     ],
+     exports: [
+        SlrdepartmentListComponent,
+        SlrdepartmentDetailsComponent,
+        SlrdepartmentEditComponent,
+        CreateSlrdepartmentComponent,
+        SlrdepartmentItemComponent
      ],
      providers: [SlrdepartmentService]
  })

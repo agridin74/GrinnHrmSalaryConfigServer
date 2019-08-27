@@ -1,13 +1,26 @@
 <div class="container-fluid">
-    <div class="container xd-container">
+    <div class="container">
         <h2>Список подарков</h2>
         <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>snm</th>
-                        <th>dperiod</th>
+                        <th>Код</th>
+                        <th>Подразделение</th>
+                        <th>Наименование</th>
+                        <th>Период</th>
+                        <th>Физическое лицо</th>
+                        <th>Вид дохода</th>
+                        <th>Ставка налога</th>
+                        <th>Сумма</th>
+                        <th>Сумма вычета</th>
+                        <th>Сумма налога</th>
+                        <th>За период</th>
+                        <th>За период(дополнительно)</th>
+                        <th>Дата фактического получения</th>
+                        <th>Налоговый период</th>
+                        <th>Дата удержания НДФЛ</th>
+                        <th>Срок перечисления НДФЛ</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -17,6 +30,11 @@
                                 {{prize.id}}
                             </a>
                         </td>
+                        <td>
+                            <a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active">
+                                <app-slrdepartment-item [slrdepartmentId]="prize.iddepartment"></app-slrdepartment-item>
+                            </a>
+                        </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
                                     (click)="onSelect(prize)">
                                 {{prize.snm}}
@@ -24,7 +42,67 @@
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
                                     (click)="onSelect(prize)">
-                                {{prize.dperiod}}
+                                {{prize.dperiod | date:"dd.MM.yyyy"}}
+                            </a>
+                        </td>
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                            (click)="onSelect(prize)">
+                                {{prize.idkadr}}
+                            </a>
+                        </td>
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                            (click)="onSelect(prize)">
+                                {{prize.idincome}}
+                            </a>
+                        </td>
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                            (click)="onSelect(prize)">
+                                {{prize.ntaxprc}}
+                            </a>
+                        </td>
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                            (click)="onSelect(prize)">
+                                {{prize.nmoney}}
+                            </a>
+                        </td>
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                            (click)="onSelect(prize)">
+                                {{prize.nmoneyvichet}}
+                            </a>
+                        </td>
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                            (click)="onSelect(prize)">
+                                {{prize.ntaxmoney}}
+                            </a>
+                        </td>
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                            (click)="onSelect(prize)">
+                                {{prize.dperiodfrom | date:"dd.MM.yyyy"}}
+                            </a>
+                        </td>
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                            (click)="onSelect(prize)">
+                                {{prize.dperiodfromuser | date:"dd.MM.yyyy"}}
+                            </a>
+                        </td>                       
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                            (click)="onSelect(prize)">
+                                {{prize.dfactpayed | date:"dd.MM.yyyy"}}
+                            </a>
+                        </td>
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                            (click)="onSelect(prize)">
+                                {{prize.dperiodtax | date:"dd.MM.yyyy"}}
+                            </a>
+                        </td>
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                            (click)="onSelect(prize)">
+                                {{prize.dpayofftax | date:"dd.MM.yyyy"}}
+                            </a>
+                        </td>
+                        <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
+                            (click)="onSelect(prize)">
+                                {{prize.dtimelimittax | date:"dd.MM.yyyy"}}
                             </a>
                         </td>
                     </tr>

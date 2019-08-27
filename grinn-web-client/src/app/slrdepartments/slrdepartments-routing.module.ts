@@ -8,13 +8,14 @@
  import { SlrdepartmentListComponent } from './slrdepartment-list/slrdepartment-list.component';
  import { SlrdepartmentEditComponent } from './slrdepartment-edit/slrdepartment-edit.component';
  import { CreateSlrdepartmentComponent } from './slrdepartment-add/slrdepartment-add.component';
+ import { AuthGaurdService } from '../auth/auth-gaurd.service';
 
  
  const slrdepartmentRoutes: Routes = [
-     {path: 'slrdepartments', component: SlrdepartmentListComponent},
-     {path: 'slrdepartments/add', component: CreateSlrdepartmentComponent},
-     {path: 'slrdepartments/:id', component: SlrdepartmentDetailsComponent},
-     {path: 'slrdepartments/:id/edit', component: SlrdepartmentEditComponent}
+     {path: 'slrdepartments', component: SlrdepartmentListComponent, canActivate: [AuthGaurdService]},
+     {path: 'slrdepartments/add', component: CreateSlrdepartmentComponent, canActivate: [AuthGaurdService]},
+     {path: 'slrdepartments/:id', component: SlrdepartmentDetailsComponent, canActivate: [AuthGaurdService]},
+     {path: 'slrdepartments/:id/edit', component: SlrdepartmentEditComponent, canActivate: [AuthGaurdService]}
  ];
 
  @NgModule({

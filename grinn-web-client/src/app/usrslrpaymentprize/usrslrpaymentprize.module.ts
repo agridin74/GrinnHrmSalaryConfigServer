@@ -10,18 +10,47 @@ import { UsrslrpaymentprizeListComponent } from './usrslrpaymentprize-list/usrsl
 import { UsrslrpaymentprizeEditComponent } from './usrslrpaymentprize-edit/usrslrpaymentprize-edit.component';
 import { UsrslrpaymentprizeDetailComponent } from './usrslrpaymentprize-detail/usrslrpaymentprize-detail.component';
 import { UsrslrpaymentprizeAddComponent } from './usrslrpaymentprize-add/usrslrpaymentprize-add.component';
+import { SlrdepartmentsModule } from '../slrdepartments/slrdepartments.module'
+
+import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+
+export const MY_DATE_FORMATS = {
+  parse: {
+    dateInput: 'DD.MM.YYYY',
+  },
+  display: {
+    dateInput: 'DD.MM.YYYY',
+    monthYearLabel: 'MM YYYY',
+    dateA11yLabel: 'DD.MM.YYYY',
+    monthYearA11yLabel: 'MM YYYY',
+  },
+};
 
 @NgModule({
   declarations: [
     UsrslrpaymentprizeListComponent,
-    UsrslrpaymentprizeEditComponent, 
-    UsrslrpaymentprizeDetailComponent, 
+    UsrslrpaymentprizeEditComponent,
+    UsrslrpaymentprizeDetailComponent,
     UsrslrpaymentprizeAddComponent],
   imports: [
     CommonModule,
     FormsModule,
-    UsrslrpaymentprizeRoutingModule
+    MatDatepickerModule,
+    MatMomentDateModule,
+    UsrslrpaymentprizeRoutingModule,
+    SlrdepartmentsModule
   ],
-  providers: [UsrslrpaymentprizeService]
+  exports: [
+    UsrslrpaymentprizeListComponent,
+    UsrslrpaymentprizeEditComponent,
+    UsrslrpaymentprizeDetailComponent,
+    UsrslrpaymentprizeAddComponent
+  ],
+  providers: [UsrslrpaymentprizeService,
+  {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
+  {provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS}
+  ]
 })
 export class UsrslrpaymentprizeModule { }

@@ -13,16 +13,16 @@ export interface Usrslrpaymentprize {
     nmoneyvichet: number;
     ntaxprc: number;
     ntaxmoney: number;
-    dperiod: Date;
-    dperiodfrom: Date;
-    dperiodfromuser: Date;
-    dfactpayed: Date;
-    dperiodtax: Date;
-    dpayofftax: Date;
-    dtimelimittax: Date;
+    dperiod: string;
+    dperiodfrom: string;
+    dperiodfromuser: string;
+    dfactpayed: string;
+    dperiodtax: string;
+    dpayofftax: string;
+    dtimelimittax: string;
     sremark: string;
     idcreator: number;
     ideditor: number;
-    dcreatedatetime: Date;
-    deditdatetime: Date;
+    dcreatedatetime: string;
+    deditdatetime: string;
 }

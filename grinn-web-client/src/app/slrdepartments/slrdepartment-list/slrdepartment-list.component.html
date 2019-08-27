@@ -11,9 +11,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let slrdepartment of slrdepartments | async">
+                    <tr *ngFor="let slrdepartment of slrdepartments ">
                     <td>{{slrdepartment.id}}</td>
-                    <td><a class="slrdepartmentFullName" routerLink="/slrdepartments/{{slrdepartment.Id}}" 
+                    <td><a  routerLink="/slrdepartments/{{slrdepartment.id}}" 
                             routerLinkActive="active" (click)="onSelect(slrdepartment)">
                             {{slrdepartment.snm}}
                         </a>

@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="form-group">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" name="username" id="username" [(ngModel)]="username"  />
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="text" name="password" id="password" [(ngModel)]="password"  />
+        </div>
+        <button class="btn btn-success" (click)="checkLogin()" >Login</button>
+    </div>
+</div>
