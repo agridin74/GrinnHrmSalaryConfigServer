@@ -8,7 +8,7 @@ import {AuthenticationService} from './auth/authentication.service';
 })
 export class AppComponent {
   login: AuthenticationService;
-  constructor(private loginService:AuthenticationService){
+  constructor(private loginService: AuthenticationService) {
     this.login = loginService;
    }
 }

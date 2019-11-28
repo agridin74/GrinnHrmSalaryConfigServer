@@ -1,8 +1,35 @@
 <div class="container-fluid">
-    <div class="container">
+    <h2 class="center">Поиск</h2>
+    <form >
+        <table class="full-width" cellspacing="0"><tr>
+            <td>
+                <mat-form-field class="full-width">
+                    <mat-label>Фамилия</mat-label>
+                    <input matInput [(ngModel)]="search.ssecondname" placeholder="Введите фамилию">
+                </mat-form-field>
+            </td>
+            <td>
+        <mat-form-field class="full-width">
+            <mat-label>Имя</mat-label>            
+            <input matInput [(ngModel)]="search.sfirstname" placeholder="Введите имя">
+        </mat-form-field>
+            </td>
+            <td>
+        <mat-form-field class="full-width">
+            <mat-label>Отчество</mat-label>
+            <input matInput [(ngModel)]="search.sthirdname" placeholder="Введите отчество">
+        </mat-form-field>
+            </td>
+        </tr>
+        </table>
+
+    </form>
+    <app-slrdepartment-select (slrdepartmentSelected)="slrdepartmentWasSelected($event)"></app-slrdepartment-select>
+    <button class="btn btn-primary">Поиск</button>
+    <div class="container col-sm-12">
         <h2>Список подарков</h2>
         <div class="table-responsive">
-            <table class="table table-striped table-bordered table-hover">
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Код</th>
@@ -21,13 +48,15 @@
                         <th>Налоговый период</th>
                         <th>Дата удержания НДФЛ</th>
                         <th>Срок перечисления НДФЛ</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let prize of usrslrpaymentprizes">
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                                    (click)="onSelect(prize)">
-                                {{prize.id}}
+                                            (click)="onSelect(prize)">
+                                        {{prize.id}}
                             </a>
                         </td>
                         <td>
@@ -36,74 +65,78 @@
                             </a>
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                                    (click)="onSelect(prize)">
-                                {{prize.snm}}
+                                            (click)="onSelect(prize)">
+                            {{prize.snm}}
                             </a>
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                                    (click)="onSelect(prize)">
+                                            (click)="onSelect(prize)">
                                 {{prize.dperiod | date:"dd.MM.yyyy"}}
                             </a>
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                            (click)="onSelect(prize)">
-                                {{prize.idkadr}}
+                                    (click)="onSelect(prize)">
+                                <app-slrkadrs-item [slrkadrId]="prize.idkadr">Oops...</app-slrkadrs-item>
                             </a>
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                            (click)="onSelect(prize)">
-                                {{prize.idincome}}
+                                    (click)="onSelect(prize)">
+                                        {{prize.idincome}}
                             </a>
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                            (click)="onSelect(prize)">
-                                {{prize.ntaxprc}}
+                                    (click)="onSelect(prize)">
+                                        {{prize.ntaxprc}}
                             </a>
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                            (click)="onSelect(prize)">
+                                    (click)="onSelect(prize)">
                                 {{prize.nmoney}}
                             </a>
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                            (click)="onSelect(prize)">
+                                    (click)="onSelect(prize)">
                                 {{prize.nmoneyvichet}}
                             </a>
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                            (click)="onSelect(prize)">
+                                    (click)="onSelect(prize)">
                                 {{prize.ntaxmoney}}
                             </a>
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                            (click)="onSelect(prize)">
+                                    (click)="onSelect(prize)">
                                 {{prize.dperiodfrom | date:"dd.MM.yyyy"}}
                             </a>
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                            (click)="onSelect(prize)">
+                                    (click)="onSelect(prize)">
                                 {{prize.dperiodfromuser | date:"dd.MM.yyyy"}}
                             </a>
                         </td>                       
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                            (click)="onSelect(prize)">
+                                    (click)="onSelect(prize)">
                                 {{prize.dfactpayed | date:"dd.MM.yyyy"}}
                             </a>
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                            (click)="onSelect(prize)">
+                                    (click)="onSelect(prize)">
                                 {{prize.dperiodtax | date:"dd.MM.yyyy"}}
                             </a>
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                            (click)="onSelect(prize)">
+                                    (click)="onSelect(prize)">
                                 {{prize.dpayofftax | date:"dd.MM.yyyy"}}
                             </a>
                         </td>
                         <td><a routerLink="/usrslrpaymentprizes/{{prize.id}}" routerLinkActive="active"
-                            (click)="onSelect(prize)">
+                                    (click)="onSelect(prize)">
                                 {{prize.dtimelimittax | date:"dd.MM.yyyy"}}
                             </a>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary m-1" >Изменить</button>
+                            <button class="btn btn-primary m-1" >Удалить</button>
                         </td>
                     </tr>
                 </tbody>
@@ -114,3 +147,6 @@
         </div>
     </div>
 </div>
+
+
+

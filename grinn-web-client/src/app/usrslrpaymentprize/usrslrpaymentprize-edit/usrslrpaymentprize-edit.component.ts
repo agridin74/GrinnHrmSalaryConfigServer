@@ -41,7 +41,7 @@ export class UsrslrpaymentprizeEditComponent implements OnInit {
 
   gotoUsrslrpaymentprizeDetail(entity: Usrslrpaymentprize) {
     this.errorMessage = null;
-    this.router.navigate(['/usrslrpaymentprizes',entity.id]);
+    this.router.navigate(['/usrslrpaymentprizes', entity.id.toString()]);
   }
 
 }

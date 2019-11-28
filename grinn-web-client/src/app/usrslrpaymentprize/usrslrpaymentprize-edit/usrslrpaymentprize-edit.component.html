@@ -1,37 +1,129 @@
 <div class="container-fluid">
-    <div class="container xd-container">
+    <div class="container">
         <h2>
             Редактирование подарков
         </h2>
         <div *ngIf="errorMessage" class="alert alert-danger">
             {{ errorMessage }}
         </div>
-        <form (ngSubmit)="onSubmit(entityForm)" #entityForm="ngForm" class="form-horizontal">
-            <div class="form-group" hidden="true">
-                <input type="text" hidden="true" class="form-control" id="id" [(ngModel)]="entity.id" />
-            </div>
-            <div class="form-group has-feedback" [class.has-success]="snm.valid" [class.has-error]="!snm.valid">
-                <label for="snm" class="col-sm-2 control-label">SNM</label>
+        <form (ngSubmit)="onSubmit(entityForm)" #entityForm="ngForm" >
+            <div class="form-group row " hidden="true" >
+                <label for="idEntity" class="col-sm-2 col-form-label">Код</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="snm" [(ngModel)]="entity.snm" minlength="2"
-                        required name="snm" #snm="ngModel"/>
-                    <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="snm.valid" 
-                        [class.glyphicon-remove]="!snm.valid" aria-hidden="true"></span>
-                    <span class="help-block" *ngIf="snm.dirty && snm.hasError('required')">Наименование должно быть заполнено</span>
-                    <span class="help-block" *ngIf="snm.dirty && snm.hasError('minlength')">Наименование должно быть длинной не меньше 2 х символов</span>
+                    <input type="text" readonly class="form-control-plaintext" id="idEntity" [(ngModel)]="entity.id" 
+                         name="idEntity" #idEntity="ngModel"/>
+                </div>
+            </div>
+            <div class="form-group row" >
+                <label for="snmEntity" class="col-sm-2 col-form-label">Наименование</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="snmEntity" [(ngModel)]="entity.snm" minlength="2"
+                        required name="snmEntity" #snmEntity="ngModel"/>
+                </div>
+            </div>
+           <div class="form-group row">
+                <label for="dperiodDate" class="col-sm-2 col-form-label">Период</label>
+                <div class="col-sm-10">
+                    <input matInput [matDatepicker]="dperiodDatepicker" [ngModel]="entity.dperiod | date:'yyyy-MM-dd'" name="dperiodDate">
+                    <mat-datepicker-toggle matSuffix [for]="dperiodDatepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dperiodDatepicker></mat-datepicker>
+                </div>
+            </div>
+            <div class="form-group row" >
+                <label for="slrkadrEntity" class="col-sm-2 col-form-label">Физическое лицо</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="slrkadrEntity" [(ngModel)]="entity.idkadr" 
+                         name="slrkadrEntity" #slrkadrEntity="ngModel"/>
+                    <app-slrkadrs-item [slrkadrId]="entity.idkadr.toString()">Oops...</app-slrkadrs-item>
+                </div>
+            </div>
+            <div class="form-group row" >
+                <label for="idincomeEntity" class="col-sm-2 col-form-label">Вид дохода</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="idincomeEntity" [(ngModel)]="entity.idincome" 
+                        required name="idincomeEntity" #idincomeEntity="ngModel"/>
+                </div>
+            </div>
+            <div class="form-group row" >
+                <label for="ntaxprcEntity" class="col-sm-2 col-form-label">Ставка налога</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="ntaxprcEntity" [(ngModel)]="entity.ntaxprc" 
+                        required name="ntaxprcEntity" #ntaxprcEntity="ngModel"/>
+                </div>
+            </div>
+            <div class="form-group row" >
+                <label for="nmoneyEntity" class="col-sm-2 col-form-label">Сумма</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nmoneyEntity" [(ngModel)]="entity.nmoney" 
+                        required name="nmoneyEntity" #nmoneyEntity="ngModel"/>
+                </div>
+            </div>
+            <div class="form-group row" >
+                <label for="nmoneyvichetEntity" class="col-sm-2 col-form-label">Сумма вычета</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nmoneyvichetEntity" [(ngModel)]="entity.nmoneyvichet" 
+                        required name="nmoneyvichetEntity" #nmoneyvichetEntity="ngModel"/>
+                </div>
+            </div>
+            <div class="form-group row" >
+                <label for="ntaxmoneyEntity" class="col-sm-2 col-form-label">Сумма налога</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="ntaxmoneyEntity" [(ngModel)]="entity.ntaxmoney" 
+                        required name="ntaxmoneyEntity" #ntaxmoneyEntity="ngModel"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="dperiodfromDate" class="col-sm-2 col-form-label">За период</label>
+                <div class="col-sm-10">
+                    <input matInput [matDatepicker]="dperiodfromDatepicker" [ngModel]="entity.dperiodfrom | date:'yyyy-MM-dd'" name="dperiodfromDate">
+                    <mat-datepicker-toggle matSuffix [for]="dperiodfromDatepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dperiodfromDatepicker></mat-datepicker>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="dperiodfromuserDate" class="col-sm-2 col-form-label">За период(дополнительно)</label>
+                <div class="col-sm-10">
+                    <input matInput [matDatepicker]="dperiodfromuserDatepicker" [ngModel]="entity.dperiodfromuser | date:'yyyy-MM-dd'" name="dperiodfromuserDate">
+                    <mat-datepicker-toggle matSuffix [for]="dperiodfromuserDatepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dperiodfromuserDatepicker></mat-datepicker>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="dfactpayedDate" class="col-sm-2 col-form-label">Дата фактического получения</label>
+                <div class="col-sm-10">
+                    <input matInput [matDatepicker]="dfactpayedDatepicker" [ngModel]="entity.dfactpayed | date:'yyyy-MM-dd'" name="dfactpayedDate">
+                    <mat-datepicker-toggle matSuffix [for]="dfactpayedDatepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dfactpayedDatepicker></mat-datepicker>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="dperiodtaxDate" class="col-sm-2 col-form-label">Налоговый период</label>
+                <div class="col-sm-10">
+                    <input matInput [matDatepicker]="dperiodtaxDatepicker" [ngModel]="entity.dperiodtax | date:'yyyy-MM-dd'" name="dperiodtaxDate">
+                    <mat-datepicker-toggle matSuffix [for]="dperiodtaxDatepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dperiodtaxDatepicker></mat-datepicker>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="dpayofftaxDate" class="col-sm-2 col-form-label">Дата удержания НДФЛ</label>
+                <div class="col-sm-10">
+                    <input matInput [matDatepicker]="dpayofftaxDatepicker" [ngModel]="entity.dpayofftax | date:'yyyy-MM-dd'" name="dpayofftaxDate">
+                    <mat-datepicker-toggle matSuffix [for]="dpayofftaxDatepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dpayofftaxDatepicker></mat-datepicker>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="dtimelimittaxDate" class="col-sm-2 col-form-label">Срок перечисления НДФЛ</label>
+                <div class="col-sm-10">
+                    <input matInput [matDatepicker]="dtimelimittaxDatepicker" [ngModel]="entity.dtimelimittax | date:'yyyy-MM-dd'" name="dtimelimittaxDate">
+                    <mat-datepicker-toggle matSuffix [for]="dtimelimittaxDatepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dtimelimittaxDatepicker></mat-datepicker>
                 </div>
             </div>
             <div class="form-group">
-                <label for="dperiod" class="col-sm-2 control-label">Период</label>
-                <input matInput [matDatepicker]="dperiodDatepicker" [ngModel]="entity.dperiod | date:'yyyy-MM-dd'" name="dperiodDate">
-                <mat-datepicker-toggle matSuffix [for]="dperiodDatepicker"></mat-datepicker-toggle>
-                <mat-datepicker #dperiodDatepicker></mat-datepicker>
-            
-            </div>
-            <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-default" (click)="gotoUsrslrpaymentprizeDetail(entity)">Назад</button>
-                    <button type="submit" [disabled]="!entityForm.valid" class="btn btn-default">Сохранить</button>
+                    <button class="btn btn-light m-1" (click)="gotoUsrslrpaymentprizeDetail(entity)">Назад</button>
+                    <button class="btn btn-primary m-1" type="submit" [disabled]="!entityForm.valid" >Сохранить</button>
                 </div>
             </div>
         </form>

@@ -18,6 +18,8 @@
 		<java.version>11</java.version>
 		<spring-boot-admin.version>2.1.5</spring-boot-admin.version>
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+		<docker.image.exposed.port>9090</docker.image.exposed.port>
+        <docker.image.dockerfile.dir>${basedir}/../docker</docker.image.dockerfile.dir>
 	</properties>
 
 	<dependencies>
@@ -79,5 +81,18 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<profiles>
+        <profile>
+            <id>buildDocker</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.spotify</groupId>
+                        <artifactId>docker-maven-plugin</artifactId>
+                        <version>${docker.plugin.version}</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

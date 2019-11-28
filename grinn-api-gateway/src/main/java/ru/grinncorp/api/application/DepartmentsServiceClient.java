@@ -31,5 +31,14 @@ public class DepartmentsServiceClient {
 		List<Slrdepartment> deps = response.getBody();
 		return deps;
 	}
+	/**
+	 * @HystrixCommand(fallbackMethod = "Имя_метода_защиты")
+    public Объект getИмя метода(параметры.....) {
+        return loadBalancedRestTemplate.getForObject и т.д.
+    }
+    private Объект Имя метода защиты(параметры.....) {
+        return Collections.emptyMap();
+    }
+	 */
 
 }

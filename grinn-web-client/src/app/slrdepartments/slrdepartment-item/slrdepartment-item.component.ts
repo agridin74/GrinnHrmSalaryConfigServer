@@ -8,7 +8,7 @@ import { SlrdepartmentService } from '../slrdepartment.service';
   styleUrls: ['./slrdepartment-item.component.css']
 })
 export class SlrdepartmentItemComponent implements OnInit {
-  errorMesage: string;
+  errorMessage: string;
   slrdepartment: Slrdepartment;
   @Input() slrdepartmentId: string;
 
@@ -19,7 +19,7 @@ export class SlrdepartmentItemComponent implements OnInit {
   ngOnInit() {
     this.slrdepartmentService.getSlrdepartmentById(this.slrdepartmentId).subscribe(
       slrdepartment => this.slrdepartment = slrdepartment,
-      error => this.errorMesage = error as any
+      error => this.errorMessage = error as any
     );
   }
 

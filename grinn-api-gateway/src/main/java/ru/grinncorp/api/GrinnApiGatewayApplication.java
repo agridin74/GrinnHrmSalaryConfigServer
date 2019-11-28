@@ -16,10 +16,14 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+
+//import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 @EnableZuulProxy
 @EnableDiscoveryClient
 @EnableCircuitBreaker
 @SpringBootApplication
+//@EnableSwagger2
 public class GrinnApiGatewayApplication {
 
 	public static void main(String[] args) {

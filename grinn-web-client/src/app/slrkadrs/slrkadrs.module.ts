@@ -12,6 +12,7 @@ import { SlrkadrDetailComponent } from './slrkadr-detail/slrkadr-detail.componen
 import { SlrkadrAddComponent } from './slrkadr-add/slrkadr-add.component';
 import { SlrkadrsRoutingModule } from './slrkadrs-routing.module';
 import { SlrkadrService } from './slrkadr.service';
+import { SlrkadrsItemComponent } from './slrkadrs-item/slrkadrs-item.component';
 
 @NgModule({
   imports: [
@@ -20,10 +21,19 @@ import { SlrkadrService } from './slrkadr.service';
     SlrkadrsRoutingModule
   ],
   declarations: [
-    SlrkadrListComponent, 
-    SlrkadrEditComponent, 
-    SlrkadrDetailComponent, 
-    SlrkadrAddComponent],
+    SlrkadrListComponent,
+    SlrkadrEditComponent,
+    SlrkadrDetailComponent,
+    SlrkadrAddComponent,
+    SlrkadrsItemComponent
+  ],
+    exports: [
+      SlrkadrListComponent,
+      SlrkadrEditComponent,
+      SlrkadrDetailComponent,
+      SlrkadrAddComponent,
+      SlrkadrsItemComponent
+    ],
   providers: [SlrkadrService]
 })
 export class SlrkadrsModule { }

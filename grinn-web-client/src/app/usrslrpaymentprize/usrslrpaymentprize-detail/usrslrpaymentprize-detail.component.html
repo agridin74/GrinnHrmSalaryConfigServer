@@ -1,18 +1,68 @@
 <div class="container-fluid">
-    <div class="container xd-container">
-        <h2>Информация по призам</h2>
+    <div class="container">
+        <div>
+            <h2>Выплата дохода</h2>          
+        </div>
         <table class="table table-striped">
             <tr>
-                <th>ID</th>
+                <th>Код</th>
                 <td><b>{{entity.id}}</b></td>
             </tr>
             <tr>
-                <th>SNM</th>
+                <th>Наименование</th>
                 <td>{{entity.snm}}</td>
             </tr>
             <tr>
-                <th>DPERIOD</th>
-                <td>{{entity.dperiod}}</td>
+                <th>Период</th>
+                <td>{{entity.dperiod | date:"dd.MM.yyyy"}}</td>
+            </tr>
+            <tr>
+                <th>Физическое лицо</th>
+                <td><app-slrkadrs-item [slrkadrId]="entity.idkadr.toString()">Oops...</app-slrkadrs-item> </td>
+            </tr>
+            <tr>
+                <th>Вид дохода</th>
+                <td>{{entity.idincome}}</td>
+            </tr>
+            <tr>
+                <th>Ставка налога</th>
+                <td>{{entity.ntaxprc}}</td>
+            </tr>
+            <tr>
+                <th>Сумма</th>
+                <td>{{entity.nmoney}}</td>
+            </tr>
+            <tr>
+                <th>Сумма вычета</th>
+                <td>{{entity.nmoneyvichet}}</td>
+            </tr>
+            <tr>
+                <th>Сумма налога</th>
+                <td>{{entity.ntaxmoney}}</td>
+            </tr>
+            <tr>
+                <th>За период</th>
+                <td>{{entity.dperiodfrom | date:"dd.MM.yyyy"}}</td>
+            </tr>
+            <tr>
+                <th>За период(дополнительно)</th>
+                <td>{{entity.dperiodfromuser | date:"dd.MM.yyyy"}}</td>
+            </tr>
+            <tr>
+                <th>Дата фактического получения</th>
+                <td>{{entity.dfactpayed | date:"dd.MM.yyyy"}}</td>
+            </tr>
+            <tr>
+                <th>Налоговый период</th>
+                <td>{{entity.dperiodtax | date:"dd.MM.yyyy"}}</td>
+            </tr>
+            <tr>
+                <th>Дата удержания НДФЛ</th>
+                <td>{{entity.dpayofftax | date:"dd.MM.yyyy"}}</td>
+            </tr>
+            <tr>
+                <th>Срок перечисления НДФЛ</th>
+                <td>{{entity.dtimelimittax | date:"dd.MM.yyyy"}}</td>
             </tr>
         </table>
         <button class="btn btn-primary m-1" (click)="gotoUsrslrpaymentprizeList()">Назад</button>

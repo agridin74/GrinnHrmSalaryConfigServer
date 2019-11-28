@@ -11,6 +11,11 @@ import { UsrslrpaymentprizeModule } from './usrslrpaymentprize/usrslrpaymentpriz
 import { AuthModule } from './auth/auth.module';
 import { HttpErrorHandler } from './error.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MaterialModule } from './material.module';
+
+
+
 
 
 
@@ -29,7 +34,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UsrslrpaymentprizeModule,
     AuthModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatNativeDateModule,
+    MaterialModule
+    
     ],
   providers: [
     HttpErrorHandler,

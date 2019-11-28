@@ -11,10 +11,13 @@ import { UsrslrpaymentprizeEditComponent } from './usrslrpaymentprize-edit/usrsl
 import { UsrslrpaymentprizeDetailComponent } from './usrslrpaymentprize-detail/usrslrpaymentprize-detail.component';
 import { UsrslrpaymentprizeAddComponent } from './usrslrpaymentprize-add/usrslrpaymentprize-add.component';
 import { SlrdepartmentsModule } from '../slrdepartments/slrdepartments.module'
+import { SlrkadrsModule } from '../slrkadrs/slrkadrs.module';
 
 import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+
+
 
 export const MY_DATE_FORMATS = {
   parse: {
@@ -40,7 +43,8 @@ export const MY_DATE_FORMATS = {
     MatDatepickerModule,
     MatMomentDateModule,
     UsrslrpaymentprizeRoutingModule,
-    SlrdepartmentsModule
+    SlrdepartmentsModule,
+    SlrkadrsModule
   ],
   exports: [
     UsrslrpaymentprizeListComponent,

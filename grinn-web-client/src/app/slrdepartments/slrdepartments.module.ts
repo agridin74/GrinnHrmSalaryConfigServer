@@ -12,30 +12,54 @@
  import { SlrdepartmentEditComponent } from './slrdepartment-edit/slrdepartment-edit.component';
  import { SlrdepartmentsRoutingModule } from './slrdepartments-routing.module';
  import { SlrdepartmentItemComponent } from './slrdepartment-item/slrdepartment-item.component';
+ import { MatTreeModule} from '@angular/material/tree';
+ import { MatTooltipModule} from '@angular/material/tooltip';
+ import { MatIconModule} from '@angular/material/icon';
+ import { SlrdepartmentSelectComponent } from './slrdepartment-select/slrdepartment-select.component';
+ import { DialogOverviewTreeDepComponent } from './slrdepartment-select/dialog-overview-tree-dep/dialog-overview-tree-dep.component';
+ import { MatFormFieldModule, MatInputModule } from '@angular/material';
+ import { MatDialogModule, MatDialogClose} from '@angular/material/dialog';
+ import { MatButtonModule } from '@angular/material';
+
 
  @NgModule({
      imports: [
          CommonModule,
          FormsModule,
-         SlrdepartmentsRoutingModule
+         SlrdepartmentsRoutingModule,
+         MatTreeModule,
+         MatTooltipModule,
+         MatIconModule,
+         MatFormFieldModule,
+         MatInputModule,
+         MatDialogModule,
+         MatButtonModule
      ],
      declarations: [
          SlrdepartmentListComponent,
          SlrdepartmentDetailsComponent,
          SlrdepartmentEditComponent,
          CreateSlrdepartmentComponent,
-         SlrdepartmentItemComponent
+         SlrdepartmentItemComponent,
+         SlrdepartmentSelectComponent,
+         DialogOverviewTreeDepComponent
      ],
      exports: [
         SlrdepartmentListComponent,
         SlrdepartmentDetailsComponent,
         SlrdepartmentEditComponent,
         CreateSlrdepartmentComponent,
-        SlrdepartmentItemComponent
+        SlrdepartmentItemComponent,
+        SlrdepartmentSelectComponent,
+        DialogOverviewTreeDepComponent,
+        MatDialogClose,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatInputModule
      ],
-     providers: [SlrdepartmentService]
+     providers: [SlrdepartmentService],
+     entryComponents: [SlrdepartmentSelectComponent, DialogOverviewTreeDepComponent]
  })
 
- export class SlrdepartmentsModule{
-     
- }
+ export class SlrdepartmentsModule { }
